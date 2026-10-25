@@ -1,0 +1,10 @@
+sequenceDiagram
+  participant A as Browser A
+  participant S as Socket.IO server
+  participant B as Browser B
+  A->>S: room:join(roomId, name)
+  S-->>A: room:joined and room:users
+  S-->>B: room:users
+  A->>S: board:stroke(stroke)
+  S-->>B: board:stroke(stroke)
+  Note over S: MVP relays strokes; it does not persist board history.

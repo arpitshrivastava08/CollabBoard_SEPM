@@ -1,0 +1,9 @@
+flowchart LR
+  U1[Participant A browser] <-->|HTTP / Socket.IO| APP[Next.js app and custom Node server]
+  U2[Participant B browser] <-->|HTTP / Socket.IO| APP
+  APP <--> IO[Socket.IO room events]
+  IO --> STATE[In-memory room presence]
+  IO --> CANVAS[Stroke broadcasts to peers]
+  classDef planned stroke-dasharray: 5 5;
+  DB[(Persistent storage)]:::planned
+  APP -. future increment .-> DB

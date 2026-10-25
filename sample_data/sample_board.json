@@ -1,0 +1,5 @@
+{
+  "roomId": "demo-room",
+  "description": "Example metadata only; the MVP does not persist boards.",
+  "strokes": []
+}
